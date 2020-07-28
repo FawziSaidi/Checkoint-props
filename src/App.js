@@ -1,26 +1,28 @@
 import React from 'react';
-import logo from './logo.svg';
+
 import './App.css';
+import ProductTable from "./components/ProductTable"
+import PropTypes from 'prop-types'
+
+const Products = [
+  {category:"Food",name:"Bread",price:200},
+  {category:"fancyFood",name:"Thon",price:6500},
+  {category:"Food",name:"Jben",price:150},
+];
+
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+   <ProductTable  Products={Products}/>
+    </>
   );
+}
+App.propTypes = {
+  category:PropTypes.string,
+  name:PropTypes.string,
+  price:PropTypes.number
+  
 }
 
 export default App;
